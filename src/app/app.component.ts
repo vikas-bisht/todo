@@ -10,7 +10,7 @@ import { todoservice } from './todo.service';
     <p></p>
     <ul>
       <li *ngFor= "let w of mywork">
-      {{ w.name }}
+      {{w.id}} &nbsp; {{ w.name }}
       </li>
       </ul>
     `,
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
   getwork(): void{
     this.todoservice.getwork().then(mywork=>this.mywork=mywork);
   }
-ngOnInit():void{
-  this.getwork();
-}
+  ngOnInit():void{
+    this.getwork();
+  }
 }
